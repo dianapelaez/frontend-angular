@@ -7,12 +7,14 @@ import { PersonaFisicaComponent } from './persona-fisica/persona-fisica.componen
 import { HttpClientModule } from '@angular/common/http';
 import { CreatePersonaFisicaComponent } from './create-persona-fisica/create-persona-fisica.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PersonaJuridicaComponent } from './persona-juridica/persona-juridica.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonaFisicaComponent,
-    CreatePersonaFisicaComponent
+    CreatePersonaFisicaComponent,
+    PersonaJuridicaComponent
   ],
   imports: [
     BrowserModule,
