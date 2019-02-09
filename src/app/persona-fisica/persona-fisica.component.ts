@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaFisicaService } from './persona-fisica.service';
+import { PersonaFisicaModel } from './../model/personaFisica.model';
 
 @Component({
   selector: 'app-persona-fisica',
@@ -9,9 +10,17 @@ import { PersonaFisicaService } from './persona-fisica.service';
 })
 export class PersonaFisicaComponent implements OnInit {
 
+  private personasFisicas: Array<PersonaFisicaModel>;
   constructor(private personaFisicaService: PersonaFisicaService) { }
 
   ngOnInit() {
+    this.loadPersonasFisicas();
+  }
+
+  private loadPersonasFisicas(): void {
+    this.personaFisicaService.getPersonasFisicas().subscribe(res => {
+      this.personasFisicas = res;
+    });
   }
 
 }

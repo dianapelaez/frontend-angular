@@ -1,0 +1,38 @@
+<div class="clear"></div>
+<h1>Crear nuevo titular / persona fisica</h1>
+<div class="clear"></div>
+<form class="form-horizontal main-form">
+  <div *ngIf="!isValid" class="alert alert-danger">
+      <strong>Danger!</strong>{{ message }}.
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="dni"><span class="required">*</span>Identificación:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" name="dni" id="dni" [(ngModel)]="personaFisica.dni" placeholder="Ingrese su identificación">
+      </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="nombre"><span class="required">*</span>Nombre:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)] = "personaFisica.nombre" placeholder="Ingrese su nombre">  
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="apellido"><span class="required">*</span>Apellido:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)]="personaFisica.apellido" placeholder="Ingrese su apellido">
+    </div>
+  </div>
+
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="cuit"><span class="required">*</span>CUIT:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" name="cuit" id="cuit" [(ngModel)]="personaFisica.cuit" placeholder="Ingrese su CUIT">
+      </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+       <button type="submit" (click)="saveOrUpdate()" class="btn btn-lg btn-primary">Guardar</button>
+    </div>
+  </div>
+</form>
