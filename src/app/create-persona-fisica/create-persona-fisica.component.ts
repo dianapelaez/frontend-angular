@@ -12,12 +12,15 @@ import { OK } from '../model/httpStatus';
   providers: [CreatePersonaFisicaService]
 })
 export class CreatePersonaFisicaComponent implements OnInit {
-  
   private personaFisica: PersonaFisicaModel;
   private isValid: Boolean = true;
   private message: String = '';
 
-  constructor(private createPersonaFisicaService: CreatePersonaFisicaService, private router: Router) { 
+  constructor(private createPersonaFisicaService: CreatePersonaFisicaService,
+    private router: Router) {
+    if (sessionStorage.getItem('personaFisica')){
+      this.personaFisica = JSON.parse(sessionStorage.getItem('personaFisica'));
+    }
     this.personaFisica = new PersonaFisicaModel();
   }
 

@@ -16,5 +16,7 @@ export class PersonaFisicaService {
 
   public delete(personaFisica: PersonaFisicaModel): void{
     this.http.post('http://localhost:8080/deletePersonaFisica', JSON.stringify(personaFisica)).subscribe();
+    this.getPersonasFisicas();
   }
+
 }
