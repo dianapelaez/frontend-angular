@@ -32,6 +32,7 @@ export class PersonaFisicaComponent implements OnInit {
 
   public delete(personaFisica: PersonaFisicaModel): void {
    this.personaFisicaService.delete(personaFisica);
+   this.router.navigate(['/createPersonaFisicaComponent']);
   }
 
 }

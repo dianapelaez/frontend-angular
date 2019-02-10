@@ -13,7 +13,7 @@ export class CreatePersonaFisicaService {
 
   constructor(private http: HttpClient) { }
 
-  /* 
+  /*
   * Método que valida campos obligatorios
   * @param personaFisica
   */
@@ -39,7 +39,7 @@ export class CreatePersonaFisicaService {
   }
 
   public saveOrUpdate(personaFisica: PersonaFisicaModel): Observable<RestResponse>{
-     return this.http.post<RestResponse>('http://localhost:8080/saveOrUpdate', JSON.stringify(personaFisica));
+     return this.http.post<RestResponse>('http://localhost:8000/api/personafisica', JSON.stringify(personaFisica));
   }
 
 }

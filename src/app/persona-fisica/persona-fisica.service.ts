@@ -11,12 +11,10 @@ export class PersonaFisicaService {
   constructor(private http: HttpClient) { }
 
   public getPersonasFisicas(): Observable<PersonaFisicaModel[]>{
-      return this.http.get<PersonaFisicaModel[]>('http://localhost:8080/getPersonasFisicas');
+      return this.http.get<PersonaFisicaModel[]>('http://localhost:8000/api/personafisica');
   }
 
   public delete(personaFisica: PersonaFisicaModel): void{
-    this.http.post('http://localhost:8080/deletePersonaFisica', JSON.stringify(personaFisica)).subscribe();
-    this.getPersonasFisicas();
+    this.http.post('http://localhost:8000/api/deletepersonafisica', JSON.stringify(personaFisica)).subscribe();
   }
-
 }

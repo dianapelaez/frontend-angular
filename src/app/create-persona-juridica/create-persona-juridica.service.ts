@@ -34,6 +34,6 @@ export class CreatePersonaJuridicaService {
   }
 
   public saveOrUpdate(personaJuridica: PersonaJuridicaModel): Observable<RestResponse>{
-     return this.http.post<RestResponse>('http://localhost:8080/saveOrUpdate', JSON.stringify(personaJuridica));
+     return this.http.post<RestResponse>('http://localhost:8000/api/personajuridica', JSON.stringify(personaJuridica));
   }
 }

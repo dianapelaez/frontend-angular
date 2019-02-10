@@ -3,10 +3,10 @@
 <div class="clear"></div>
 <form class="form-horizontal main-form">
   <div *ngIf="!isValid" class="alert alert-danger">
-      <strong>Danger!</strong>{{ message }}.
+      <strong>Advertencia! </strong>{{ message }}.
   </div>
   <div class="form-group">
-      <label class="control-label col-sm-2" for="razon"><span class="required">*</span>Razón social:</label>
+      <label class="control-label col-sm-2" for="razon_social"><span class="required">*</span>Razón social:</label>
       <div class="col-sm-10"> 
         <input type="text" class="form-control" name="razon" id="razon" [(ngModel)]="personaJuridica.dni" placeholder="Ingrese razón social">
       </div>
